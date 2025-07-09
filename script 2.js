@@ -12,3 +12,24 @@ document.querySelectorAll('.color').forEach((el) => {
     sounds[id].play();
   });
 });
+// Array di colori disponibili
+const colors = ['red', 'blue', 'green'];
+
+// Funzione per suonare un colore
+function playSound(color) {
+  const audio = new Audio(`sounds/${color}.mp3`);
+  audio.play();
+}
+
+// Aggiungi un pulsante per ogni colore
+const container = document.getElementById('color-container');
+
+colors.forEach(color => {
+  const button = document.createElement('button');
+  button.style.backgroundColor = color;
+  button.classList.add('color-button');
+  button.onclick = () => {
+    playSound(color); // quando clicchi, suona
+  };
+  container.appendChild(button);
+});
