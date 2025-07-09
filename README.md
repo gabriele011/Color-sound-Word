@@ -1,1 +1,36 @@
-# Color-sound-Word
+# Color-sound-Word<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Color-sound-Word</title>
+  <style>
+    .color-button {
+      width: 100px;
+      height: 100px;
+      display: inline-block;
+      margin: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Color-sound-Word</h1>
+  <div id="container">
+    <div class="color-button" style="background-color: red;" onclick="playSound('red')"></div>
+    <div class="color-button" style="background-color: blue;" onclick="playSound('blue')"></div>
+    <div class="color-button" style="background-color: green;" onclick="playSound('green')"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>function playSound(color) {
+  const sounds = {
+    red: new Audio('sounds/red.mp3'),
+    blue: new Audio('sounds/blue.mp3'),
+    green: new Audio('sounds/green.mp3'),
+  };
+
+  if (sounds[color]) {
+    sounds[color].play();
+  }
+}
